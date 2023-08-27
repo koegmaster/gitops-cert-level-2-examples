@@ -23,7 +23,10 @@ spec:
       - CreateNamespace=true
 
   ignoreDifferences:
-  - group: "*"
-    kind: "*"
-    managedFieldsManagers:
-    - kube-controller-manager
+  - group: apps
+    kind: Deployment
+    jsonPointers:
+    - /metadata/annotations
+  - kind: Secret
+    jsonPointers:
+    - /data/my-password
