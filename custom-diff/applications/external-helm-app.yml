@@ -22,11 +22,8 @@ spec:
     syncOptions:
       - CreateNamespace=true
 
-  ignoreDifferences:
-  - group: apps
-    kind: Deployment
-    jsonPointers:
-    - /metadata/annotations/creation/timestamp
-  - kind: Secret
-    jsonPointers:
-    - /data/my-password
+    ignoreDifferences:
+    - group: "*"
+      kind: "*"
+      managedFieldsManagers:
+      - external-secrets
