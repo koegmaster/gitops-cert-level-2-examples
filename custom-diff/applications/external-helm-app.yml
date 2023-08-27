@@ -22,8 +22,8 @@ spec:
     syncOptions:
       - CreateNamespace=true
 
-    ignoreDifferences:
-    - group: "*"
-      kind: "*"
-      managedFieldsManagers:
-      - external-secrets
+  ignoreDifferences:
+  - group: "*"
+    kind: "*"
+    managedFieldsManagers:
+    - kube-controller-manager
